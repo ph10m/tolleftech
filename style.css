@@ -1,89 +1,72 @@
-@import url(https://fonts.googleapis.com/css?family=Cousine);
-
 body {
   margin: 0;
-  font-family: 'Cousine', 'monospace';
-  animation: blackWallpaper 2s;
-  background: black;
+  font-family: 'Source Code Pro', monospace;
+  /* animation: blackWallpaper 1s; */
+  background: #232323;
 }
-@keyframes blackWallpaper {
-  from { background: #C0C0C0; }
-  to { background: black; }
-}
+/* @keyframes blackWallpaper { */
+/*   from { background: #C0C0C0; } */
+/*   to { background: #232323; } */
+/* } */
 
-#console {
+.terminal {
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 800px;
-  height: 600px;
-  margin: 0;
-  background-color: #343434;
-  /* background-color: black; */
-  border-color: #C8BFA6;
-  color: #C0C0C0;
-  /* color: black; */
-  border-style: solid;
-  border-top-width: 30px;
-  border-left-width: 30px;
-  border-right-width: 30px;
-  border-bottom-width: 60px;
-  border-radius: 10px;
-  animation: consoleScreen 2s;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-box-shadow: inset 0 0 0px 7px #928771, inset 0 0 0px 12px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 0 0px 7px #928771, inset 0 0 0px 12px rgba(0, 0, 0, 0.2);
+
+  color: white;
+
+  width: 60vw;
+  max-width: 800px;
+  height: 50vh;
+  max-height: 700px;
+
+  border: 5px solid darkGray;
 }
-@keyframes consoleScreen {
-    from {
-      background: black;
-    }
-    to {
-      background: #343434;
-    }
+
+.terminal-header {
+  background-color: lightGray;
+  color: black;
 }
-#console pre {
-  position: relative;
-  font-family: 'Cousine', 'monospace';
-  font-size: 18px;
-  padding-left: 30px;
-  padding-bottom: 0;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  animation: fadein 2s;
+
+.terminal-header hr {
+  background-color: darkGray;
+  height: 5px;
+  margin-top: 0;
+  border: 0;
 }
-@keyframes fadein {
-    from {
-      color: black;
-    }
-    to {
-      color: #C0C0C0;
-    }
+
+#header-text {
+  margin-left: 1%;
 }
-#console pre:nth-child(1) {
-  margin-top: 25px;
-}
-#console pre.breakline {
-  padding-bottom: 12px;
-}
-#console::before {
+
+#header-btn {
   position: absolute;
-  content: '';
-  width: 70px;
-  height: 10px;
-  background-color: #343434;
-  right: 20px;
-  bottom: -35px;
+  right: 1%;
 }
-#console::after {
-  position: absolute;
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 6px;
-  background-color: #343434;
-  right: 5px;
-  bottom: -32px;
+
+.terminal-content {
+  margin: 10px 5px;
+  overflow: scroll;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+#info-text:before{
+  content: "$ "
+}
+
+input[type='text']{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: inherit;
+  font-family: 'Source Code Pro', monospace;
+}
+
+input[type='submit'] {
+ display: none; 
 }

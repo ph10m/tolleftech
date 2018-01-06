@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Cousine);
+
+body {
+  margin: 0;
+  font-family: 'Cousine', 'monospace';
+  animation: blackWallpaper 2s;
+  background: black;
+}
+@keyframes blackWallpaper {
+  from { background: #C0C0C0; }
+  to { background: black; }
+}
+
+#console {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 600px;
+  margin: 0;
+  background-color: #343434;
+  /* background-color: black; */
+  border-color: #C8BFA6;
+  color: #C0C0C0;
+  /* color: black; */
+  border-style: solid;
+  border-top-width: 30px;
+  border-left-width: 30px;
+  border-right-width: 30px;
+  border-bottom-width: 60px;
+  border-radius: 10px;
+  animation: consoleScreen 2s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: inset 0 0 0px 7px #928771, inset 0 0 0px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 0px 7px #928771, inset 0 0 0px 12px rgba(0, 0, 0, 0.2);
+}
+@keyframes consoleScreen {
+    from {
+      background: black;
+    }
+    to {
+      background: #343434;
+    }
+}
+#console pre {
+  position: relative;
+  font-family: 'Cousine', 'monospace';
+  font-size: 18px;
+  padding-left: 30px;
+  padding-bottom: 0;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  animation: fadein 2s;
+}
+@keyframes fadein {
+    from {
+      color: black;
+    }
+    to {
+      color: #C0C0C0;
+    }
+}
+#console pre:nth-child(1) {
+  margin-top: 25px;
+}
+#console pre.breakline {
+  padding-bottom: 12px;
+}
+#console::before {
+  position: absolute;
+  content: '';
+  width: 70px;
+  height: 10px;
+  background-color: #343434;
+  right: 20px;
+  bottom: -35px;
+}
+#console::after {
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: #343434;
+  right: 5px;
+  bottom: -32px;
+}
